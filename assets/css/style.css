@@ -1,0 +1,13 @@
+body{
+background-image: url(../images/glass.png);
+background-repeat: no-repeat;
+background-size: cover;
+}
+.gif-center
+{
+background-color: darkgray;
+}
+#gif-button  
+{
+text-align: center;
+}
