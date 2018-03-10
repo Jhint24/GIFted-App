@@ -1,13 +1,21 @@
-body{
+body
+{
 background-image: url(../images/glass.png);
 background-repeat: no-repeat;
 background-size: cover;
 }
+
 .gif-center
 {
 background-color: darkgray;
 }
-#gif-button  
+
+#gif-button, #topics-view  
 {
 text-align: center;
+}
+
+.gif-topics
+{
+    margin-left: 5px;
 }
