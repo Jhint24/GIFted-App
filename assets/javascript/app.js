@@ -19,7 +19,7 @@ var topics = ["Fortnite", "Rocket League", "Brawlhalla", "Call of Duty", "Destin
     }
 }
 
-$("button").on("click", function()
+$(".gif-topics").on("click", function()
 {
     var videoGames = $(this).attr("data-name");
     var apiKey = "9a5h6VPUl9kDUeWtRsK0jgVqS9PUJNi3";
@@ -36,14 +36,18 @@ $("button").on("click", function()
         
         var results = response.data;
 
-        for (var j = 0; j < results.length; i ++)
-        {
-            //dynamic-elements-solution
+        for (var j = 0; j < results.length; j ++)
+        {//dynamic-elements-solution
+         var gameDiv = $("<div>");
+         var p = $("<p>").text("Rating: " + results[j].rating);
+         var gameImage = $("<img>");
+         gameImage.attr("src", results[j].images.fixed_height.url);
+         gameDiv.append(p);
+         gameDiv.append(gameImage);
+         $(".gifs-appear-here").prepend(gameDiv);
         }
-
-    })
-
-})
+    });
+});
 //make sure the gifs are non-animated when grabbed/appended
 //when user clicks image, animate
 //display the rating
