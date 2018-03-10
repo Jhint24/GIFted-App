@@ -24,7 +24,24 @@ $("button").on("click", function()
     var videoGames = $(this).attr("data-name");
     var apiKey = "9a5h6VPUl9kDUeWtRsK0jgVqS9PUJNi3";
     var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=" + apiKey + "&q=" + videoGames + "&limit=10";
-    
+    //AJAX request with queryURL
+    $.ajax({
+        url: queryURL,
+        method: "GET"
+    })
+    .done(function(response)
+    {
+        console.log(queryURL);
+        console.log(response);
+        
+        var results = response.data;
+
+        for (var j = 0; j < results.length; i ++)
+        {
+            //dynamic-elements-solution
+        }
+
+    })
 
 })
 //make sure the gifs are non-animated when grabbed/appended
