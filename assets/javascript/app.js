@@ -13,17 +13,17 @@ var topics = ["Fortnite", "Rocket League", "Brawlhalla", "Call of Duty", "Destin
         var a = $("<button>");
         a.addClass("btn btn-info btn-lg");
         a.addClass("gif-topics");
-        a.attr("data-name", topics[i]); //data-attribute at movie index i
+        a.attr("data-name", topics[i]); //data-attribute at game index i
         a.text(topics[i]);
-        $("#topics-view").append(a);
+        $("#game-button").append(a);
     }
 }
 
-$(".gif-topics").on("click", function()
+$("#game-button").on("click", function()
 {
     var videoGames = $(this).attr("data-name");
     var apiKey = "9a5h6VPUl9kDUeWtRsK0jgVqS9PUJNi3";
-    var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=" + apiKey + "&q=" + videoGames + "&limit=10";
+    var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=9a5h6VPUl9kDUeWtRsK0jgVqS9PUJNi3&q=" + videoGames + "&limit=10&offset=0&rating=G&lang=en";
     //AJAX request with queryURL
     $.ajax({
         url: queryURL,
