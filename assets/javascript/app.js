@@ -21,10 +21,10 @@ var topics = ["Fortnite", "Rocket League", "Brawlhalla", "Call of Duty", "Destin
 //on button click
 $("#game-button").on("click", "button", function()
 {
-    videoGames = $(this).attr("data-name");
+    videoGames = $(this).attr("data-name");//this
     console.log(videoGames);
     var apiKey = "9a5h6VPUl9kDUeWtRsK0jgVqS9PUJNi3";
-    var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=9a5h6VPUl9kDUeWtRsK0jgVqS9PUJNi3&q=" + videoGames + "&limit=10&offset=0&rating=G&lang=en";
+    var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=9a5h6VPUl9kDUeWtRsK0jgVqS9PUJNi3&q=" + videoGames + "&limit=10&offset=0&lang=en";
     //AJAX request with queryURL
     $.ajax({
         url: queryURL,
@@ -40,6 +40,7 @@ $("#game-button").on("click", "button", function()
         for (var i = 0; i < results.length; i++)
         {//dynamic-elements-solution
          var gameDiv = $("<div>");
+         //add rating to the image
          var p = $("<p>").text("Rating: " + results[i].rating);
          var gameImage = $("<img>");
          //attributes for still/animated 
@@ -57,9 +58,25 @@ $("#game-button").on("click", "button", function()
         }
     });
 });
-//make sure the gifs are non-animated when grabbed/appended
+
+$("#gifs-appear-here").on("click", "img", function ()
+{
+    var animateGif = $(this).attr("data-state");
+
+        if (animateGif === "still") 
+        {
+            $(this).attr("src", $(this).attr("data-animate"));
+            $(this).attr("data-state", "animate");
+        }
+        else 
+        {
+            $(this).attr("src", $(this).attr("data-still"));
+            $(this).attr("data-state", "still");
+        }
+});
+//make sure the gifs are non-animated when grabbed/appended.check
 //when user clicks image, animate
 //display the rating
 //add a form to take values from user to add into topics array
-//make a function that takes each topc and remakes the buttons on page
+//make a function that takes each topic and remakes the buttons on page.check
 renderButtons();
