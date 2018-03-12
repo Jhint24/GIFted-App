@@ -7,7 +7,7 @@ var topics = ["Fortnite", "Rocket League", "Brawlhalla", "Call of Duty", "Destin
     function renderButtons()
 {       //deleting buttons prior to adding new ones so no repeat
         $("#topics-view").empty();
-
+        //loop through the topics var
         for (var i =0; i < topics.length; i++)  
     {
         var a = $("<button>");
@@ -18,7 +18,7 @@ var topics = ["Fortnite", "Rocket League", "Brawlhalla", "Call of Duty", "Destin
         $("#game-button").append(a);
     }
 }
-
+//on button click
 $("#game-button").on("click", "button", function()
 {
     videoGames = $(this).attr("data-name");
@@ -42,14 +42,15 @@ $("#game-button").on("click", "button", function()
          var gameDiv = $("<div>");
          var p = $("<p>").text("Rating: " + results[i].rating);
          var gameImage = $("<img>");
-         
+         //attributes for still/animated 
          gameImage.attr("src", results[i].images.fixed_width_still.url);
          gameImage.attr("data-state", "still");
          gameImage.attr("data-still", results[i].images.fixed_width_still.url);
          gameImage.attr("data-animate", results[i].images.fixed_width.url);
-
+        //add to the div
          gameDiv.append(p);
          gameDiv.append(gameImage);
+         //send to html
          $("#gifs-appear-here").prepend(gameDiv);
          console.log(gameImage);
          console.log(p);
