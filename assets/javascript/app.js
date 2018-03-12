@@ -43,7 +43,8 @@ $("#game-button").on("click", "button", function()
          //add rating to the image
          var p = $("<p id = 'rating-paragraph'>").text("Rating: " + results[i].rating);
          var gameImage = $("<img id = 'game-gif'>");
-         //attributes for still/animated 
+         //attributes for still/animated
+         //from GIPHY aPI rendition guide page
          gameImage.attr("src", results[i].images.fixed_width_still.url, results[i].images.fixed_height_still.url);
          gameImage.attr("data-state", "still");
          gameImage.attr("data-still", results[i].images.fixed_width_still.url, results[i].images.fixed_height_still.url);
@@ -59,7 +60,7 @@ $("#game-button").on("click", "button", function()
         }
     });
 });
-
+//animate/still the images on clicking
 $("#gifs-appear-here").on("click", "img", function ()
 {
     var animateGif = $(this).attr("data-state");//this
@@ -77,9 +78,20 @@ $("#gifs-appear-here").on("click", "img", function ()
         console.log(animateGif);
 });
 
+//use the form
+$("#new-game-gif").on("click", function (event)
+{
+    event.preventDefault();
+
+    var games = $("#gif-submit-form").val().trim();//always use .trim after.val
+    topics.push(games);
+    $("#gif-submit-form").empty;
+    console.log(games);
+})
+
 //make sure the gifs are non-animated when grabbed/appended.check
-//when user clicks image, animate
-//display the rating
+//when user clicks image, animate.check
+//display the rating.check
 //add a form to take values from user to add into topics array
 //make a function that takes each topic and remakes the buttons on page.check
 renderButtons();
