@@ -87,7 +87,8 @@ $("#new-game-gif").on("click", function (event)
     topics.push(games);
     $("#gif-submit-form").empty;
     console.log(games);
-})
+    console.log(topics);
+});
 
 //make sure the gifs are non-animated when grabbed/appended.check
 //when user clicks image, animate.check
