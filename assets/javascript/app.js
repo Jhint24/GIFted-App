@@ -11,7 +11,7 @@ var topics = ["Fortnite", "Rocket League", "Brawlhalla", "Call of Duty", "Destin
         for (var i =0; i < topics.length; i++)  
     {
         var a = $("<button>");
-        a.addClass("btn btn-info btn-lg");
+        a.addClass("btn btn-outline-dark btn-lg");
         a.addClass("gif-topics");
         a.attr("data-name", topics[i]); //data-attribute at game index i
         a.text(topics[i]);

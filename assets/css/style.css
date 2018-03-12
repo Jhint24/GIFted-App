@@ -1,13 +1,17 @@
 body
 {
-background-image: url(../images/glass.png);
+background-image: url(../images/sky.jpeg);
 background-repeat: no-repeat;
+background-attachment: fixed;
 background-size: cover;
 }
 
 .gif-center
 {
-background-color: darkgray;
+    background-image: url(../images/sky.jpeg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
 text-align: center;
 }
 
@@ -19,6 +23,7 @@ text-align: center;
 .gif-topics
 {
 margin-left: 5px;
+color:black;
 }
 
 .form-group
@@ -34,7 +39,7 @@ margin-top: 10px;
 
 label
 {
-color: blue;
+color: black;
 font-size: 15px;
 font-weight: bolder;
 margin-top: 25px;
@@ -57,5 +62,9 @@ margin-bottom: 10px;
 
 #gif-central
 {
-    background-color: #17a2b8;
+    background-image: url(../images/sky.jpeg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
 }
+
