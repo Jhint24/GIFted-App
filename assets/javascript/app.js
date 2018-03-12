@@ -6,7 +6,7 @@ var topics = ["Fortnite", "Rocket League", "Brawlhalla", "Call of Duty", "Destin
         //***try using a loop that appends a button for each string in array */
     function renderButtons()
 {       //deleting buttons prior to adding new ones so no repeat
-        $("#topics-view").empty();
+        $("#game-button").empty();
         //loop through the topics var
         for (var i =0; i < topics.length; i++)  
     {
@@ -85,9 +85,10 @@ $("#new-game-gif").on("click", function (event)
 
     var games = $("#gif-submit-form").val().trim();//always use .trim after.val
     topics.push(games);
-    $("#gif-submit-form").empty;
+    $("#gif-submit-form").empty();
     console.log(games);
     console.log(topics);
+    renderButtons();
 });
 
 //make sure the gifs are non-animated when grabbed/appended.check
