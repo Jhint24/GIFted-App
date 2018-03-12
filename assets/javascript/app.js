@@ -44,10 +44,11 @@ $("#game-button").on("click", "button", function()
          var p = $("<p id = 'rating-paragraph'>").text("Rating: " + results[i].rating);
          var gameImage = $("<img id = 'game-gif'>");
          //attributes for still/animated 
-         gameImage.attr("src", results[i].images.fixed_width_still.url);
+         gameImage.attr("src", results[i].images.fixed_width_still.url, results[i].images.fixed_height_still.url);
          gameImage.attr("data-state", "still");
-         gameImage.attr("data-still", results[i].images.fixed_width_still.url);
-         gameImage.attr("data-animate", results[i].images.fixed_width.url);
+         gameImage.attr("data-still", results[i].images.fixed_width_still.url, results[i].images.fixed_height_still.url);
+         gameImage.attr("data-animate", results[i].images.fixed_width.url, results[i].images.fixed_height.url);
+
         //add to the div
          gameDiv.append(p);
          gameDiv.append(gameImage);

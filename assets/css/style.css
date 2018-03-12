@@ -8,9 +8,10 @@ background-size: cover;
 .gif-center
 {
 background-color: darkgray;
+text-align: center;
 }
 
-#gif-button, #topics-view  
+#game-button
 {
 text-align: center;
 }
