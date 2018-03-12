@@ -19,9 +19,10 @@ var topics = ["Fortnite", "Rocket League", "Brawlhalla", "Call of Duty", "Destin
     }
 }
 
-$("#game-button").on("click", function()
+$("#game-button").on("click", "button", function()
 {
-    var videoGames = $(this).attr("data-name");
+    videoGames = $(this).attr("data-name");
+    console.log(videoGames);
     var apiKey = "9a5h6VPUl9kDUeWtRsK0jgVqS9PUJNi3";
     var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=9a5h6VPUl9kDUeWtRsK0jgVqS9PUJNi3&q=" + videoGames + "&limit=10&offset=0&rating=G&lang=en";
     //AJAX request with queryURL
