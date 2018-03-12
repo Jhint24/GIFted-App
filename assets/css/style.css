@@ -37,4 +37,25 @@ label
 color: blue;
 font-size: 15px;
 font-weight: bolder;
+margin-top: 25px;
+}
+
+#rating-paragraph
+{
+font-family: Georgia, 'Times New Roman', Times, serif;
+font-weight: bolder;
+color: black;
+font-size: 15px;
+margin-top: 10px;
+margin-bottom: 10px;
+}
+
+#gif-submit-form
+{
+    margin-bottom: 10px;
+}
+
+#gif-central
+{
+    background-color: #17a2b8;
 }
