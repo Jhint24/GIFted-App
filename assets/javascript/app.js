@@ -24,7 +24,7 @@ $("#game-button").on("click", "button", function()
     videoGames = $(this).attr("data-name");//this
     console.log(videoGames);
     var apiKey = "9a5h6VPUl9kDUeWtRsK0jgVqS9PUJNi3";
-    var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=9a5h6VPUl9kDUeWtRsK0jgVqS9PUJNi3&q=" + videoGames + "&limit=10&offset=0&lang=en";
+    var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=9a5h6VPUl9kDUeWtRsK0jgVqS9PUJNi3&q=" + videoGames + "&limit=9&offset=0&lang=en";
     //AJAX request with queryURL
     $.ajax({
         url: queryURL,
@@ -39,10 +39,10 @@ $("#game-button").on("click", "button", function()
 
         for (var i = 0; i < results.length; i++)
         {//dynamic-elements-solution
-         var gameDiv = $("<div>");
+         var gameDiv = $("<div class = 'col-4'>");
          //add rating to the image
-         var p = $("<p>").text("Rating: " + results[i].rating);
-         var gameImage = $("<img>");
+         var p = $("<p id = 'rating-paragraph'>").text("Rating: " + results[i].rating);
+         var gameImage = $("<img id = 'game-gif'>");
          //attributes for still/animated 
          gameImage.attr("src", results[i].images.fixed_width_still.url);
          gameImage.attr("data-state", "still");
@@ -61,7 +61,7 @@ $("#game-button").on("click", "button", function()
 
 $("#gifs-appear-here").on("click", "img", function ()
 {
-    var animateGif = $(this).attr("data-state");
+    var animateGif = $(this).attr("data-state");//this
 
         if (animateGif === "still") 
         {
@@ -73,7 +73,9 @@ $("#gifs-appear-here").on("click", "img", function ()
             $(this).attr("src", $(this).attr("data-still"));
             $(this).attr("data-state", "still");
         }
+        console.log(animateGif);
 });
+
 //make sure the gifs are non-animated when grabbed/appended.check
 //when user clicks image, animate
 //display the rating
