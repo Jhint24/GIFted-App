@@ -37,15 +37,22 @@ $("#game-button").on("click", "button", function()
         
         var results = response.data;
 
-        for (var j = 0; j < results.length; j ++)
+        for (var i = 0; i < results.length; i++)
         {//dynamic-elements-solution
          var gameDiv = $("<div>");
-         var p = $("<p>").text("Rating: " + results[j].rating);
+         var p = $("<p>").text("Rating: " + results[i].rating);
          var gameImage = $("<img>");
-         gameImage.attr("src", results[j].images.fixed_height.url);
+         
+         gameImage.attr("src", results[i].images.fixed_width_still.url);
+         gameImage.attr("data-state", "still");
+         gameImage.attr("data-still", results[i].images.fixed_width_still.url);
+         gameImage.attr("data-animate", results[i].images.fixed_width.url);
+
          gameDiv.append(p);
          gameDiv.append(gameImage);
-         $(".gifs-appear-here").prepend(gameDiv);
+         $("#gifs-appear-here").prepend(gameDiv);
+         console.log(gameImage);
+         console.log(p);
         }
     });
 });
