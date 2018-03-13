@@ -1,3 +1,5 @@
+$(document).ready(function () {
+    
 //create variables 
  //ratinglang = &rating=G&lang=en
 //create an array of strings as var = topic 
@@ -97,3 +99,4 @@ $("#new-game-gif").on("click", function (event)
 //add a form to take values from user to add into topics array.check
 //make a function that takes each topic and remakes the buttons on page.check
 renderButtons();
+});
