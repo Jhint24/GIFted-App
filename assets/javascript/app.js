@@ -81,11 +81,11 @@ $("#gifs-appear-here").on("click", "img", function ()
 //use the form
 $("#new-game-gif").on("click", function (event)
 {
-    $("#gif-submit-form").empty(); //this isnt working.
     event.preventDefault();
 
     var games = $("#gif-submit-form").val().trim();//always use .trim after.val
     topics.push(games);
+    $("#gif-submit-form").val(""); //this isnt working.
     console.log(games);
     console.log(topics);
     renderButtons();//function to remake buttons
