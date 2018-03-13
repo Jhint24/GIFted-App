@@ -8,11 +8,12 @@ background-size: cover;
 
 .gif-center
 {
-    background-image: url(../images/sky.jpeg);
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
+background-image: url(../images/sky.jpeg);
+background-repeat: no-repeat;
+background-attachment: fixed;
+background-size: cover;
 text-align: center;
+padding-bottom: 0;
 }
 
 #game-button
@@ -24,6 +25,7 @@ text-align: center;
 {
 margin-left: 5px;
 color:black;
+margin-bottom: 5px;
 }
 
 .form-group
@@ -66,5 +68,10 @@ margin-bottom: 10px;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
+}
+
+.row
+{
+    margin: 5px;
 }
 

@@ -81,19 +81,19 @@ $("#gifs-appear-here").on("click", "img", function ()
 //use the form
 $("#new-game-gif").on("click", function (event)
 {
+    $("#gif-submit-form").empty(); //this isnt working.
     event.preventDefault();
 
     var games = $("#gif-submit-form").val().trim();//always use .trim after.val
     topics.push(games);
-    $("#gif-submit-form").empty();
     console.log(games);
     console.log(topics);
-    renderButtons();
+    renderButtons();//function to remake buttons
 });
 
 //make sure the gifs are non-animated when grabbed/appended.check
 //when user clicks image, animate.check
 //display the rating.check
-//add a form to take values from user to add into topics array
+//add a form to take values from user to add into topics array.check
 //make a function that takes each topic and remakes the buttons on page.check
 renderButtons();
